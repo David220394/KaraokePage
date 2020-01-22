@@ -43,16 +43,9 @@
             success: function (data) {
                 var table = $("#period1");
                 $("#period1 tr").remove();
+                $("#waiting1 tr").remove();
                 $.each(data.ParticipantDirectory.ParticipantList1, function (idx, elem) {
-                    //"<li><div class=\"inner\"><div class=\"li-img\"><img src=\"../../Images/karaoke-icon.png\"/></div>"+
-                    //"    <div class=\"li-text\">"+
-                    //"            <h3 class=\"li-head\">Title of Content</h3>"+
-                    //"            <div class="li-sub">"+
-                    //"                <p>Summary of content.</p>"+
-                    //"            </div>"+
-                    //"        </div>"+
-                    //"    </div>"+
-                    //"</li>"
+
                     table.append("<tr>" +
                         "<td  id=\"period1-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                         "<td>" +
@@ -67,23 +60,32 @@
                     var out3 = document.getElementById("period1-3-" + idx);
                     new ShuffleText(out3).start();
                 });
-
+                var table = $("#waiting1");
                 if (data.ParticipantDirectory.ParticipantList1.length == 10) {
-
+                     $.each(data.WaitingListDirectory.WaitingList1, function (idx, elem) {
+                         $("#waiting1").css("display","block");
+                        table.append("<tr>" +
+                            "<td  id=\"period1-1-1" + idx + "\">" + elem.MainParticipant + "</td>" +
+                            "<td>" +
+                            "<div id=\"period1-2-1" + idx + "\">" + elem.Request + "</div></td>" +
+                            "<td>" +
+                            "<div id=\"period1-3-1" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "</tr > ");
+                        var out1 = document.getElementById("period1-1-1" + idx);
+                        new ShuffleText(out1).start();
+                        var out2 = document.getElementById("period1-2-1" + idx);
+                        new ShuffleText(out2).start();
+                        var out3 = document.getElementById("period1-3-1" + idx);
+                        new ShuffleText(out3).start();
+                    });
                 }
 
+
+                //PERIOD 2
                 var table = $("#period2");
                 $("#period2 tr").remove();
+                $("#waiting2 tr").remove();
                 $.each(data.ParticipantDirectory.ParticipantList2, function (idx, elem) {
-                    //"<li><div class=\"inner\"><div class=\"li-img\"><img src=\"../../Images/karaoke-icon.png\"/></div>"+
-                    //"    <div class=\"li-text\">"+
-                    //"            <h3 class=\"li-head\">Title of Content</h3>"+
-                    //"            <div class="li-sub">"+
-                    //"                <p>Summary of content.</p>"+
-                    //"            </div>"+
-                    //"        </div>"+
-                    //"    </div>"+
-                    //"</li>"
                     table.append("<tr>" +
                         "<td  id=\"period2-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                         "<td>" +
@@ -98,19 +100,32 @@
                     var out3 = document.getElementById("period2-3-" + idx);
                     new ShuffleText(out3).start();
                 });
+                 var table = $("#waiting2");
+                if (data.ParticipantDirectory.ParticipantList2.length == 10) {
+                     $.each(data.WaitingListDirectory.WaitingList2, function (idx, elem) {
 
+                        table.append("<tr>" +
+                            "<td  id=\"period1-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
+                            "<td>" +
+                            "<div id=\"period1-2-" + idx + "\">" + elem.Request + "</div></td>" +
+                            "<td>" +
+                            "<div id=\"period1-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "</tr > ");
+                        var out1 = document.getElementById("period1-1-" + idx);
+                        new ShuffleText(out1).start();
+                        var out2 = document.getElementById("period1-2-" + idx);
+                        new ShuffleText(out2).start();
+                        var out3 = document.getElementById("period1-3-" + idx);
+                        new ShuffleText(out3).start();
+                    });
+                }
+
+                //-----------------------------------------------------------------------------------------
+                //PERIOD 3
                 var table = $("#period3");
                 $("#period3 tr").remove();
+                $("#waiting3 tr").remove();
                 $.each(data.ParticipantDirectory.ParticipantList3, function (idx, elem) {
-                    //"<li><div class=\"inner\"><div class=\"li-img\"><img src=\"../../Images/karaoke-icon.png\"/></div>"+
-                    //"    <div class=\"li-text\">"+
-                    //"            <h3 class=\"li-head\">Title of Content</h3>"+
-                    //"            <div class="li-sub">"+
-                    //"                <p>Summary of content.</p>"+
-                    //"            </div>"+
-                    //"        </div>"+
-                    //"    </div>"+
-                    //"</li>"
                     table.append("<tr>" +
                         "<td  id=\"period3-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                         "<td>" +
@@ -124,6 +139,104 @@
                     var out3 = document.getElementById("period3-3-" + idx);
                     new ShuffleText(out3).start();
                 });
+                 var table = $("#waiting3");
+                 if (data.ParticipantDirectory.ParticipantList3.length == 10) {
+                     $.each(data.WaitingListDirectory.WaitingList3, function (idx, elem) {
+
+                        table.append("<tr>" +
+                            "<td  id=\"period1-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
+                            "<td>" +
+                            "<div id=\"period1-2-" + idx + "\">" + elem.Request + "</div></td>" +
+                            "<td>" +
+                            "<div id=\"period1-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "</tr > ");
+                        var out1 = document.getElementById("period1-1-" + idx);
+                        new ShuffleText(out1).start();
+                        var out2 = document.getElementById("period1-2-" + idx);
+                        new ShuffleText(out2).start();
+                        var out3 = document.getElementById("period1-3-" + idx);
+                        new ShuffleText(out3).start();
+                    });
+                }
+
+                //-----------------------------------------------------------------------------------------
+                //PERIOD 4
+                var table = $("#period4");
+                $("#period4 tr").remove();
+                $("#waiting4 tr").remove();
+                $.each(data.ParticipantDirectory.ParticipantList4, function (idx, elem) {
+                    table.append("<tr>" +
+                        "<td  id=\"period4-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
+                        "<td>" +
+                        "<div id=\"period4-2-" + idx + "\">" + elem.Request + "</div></td>" +
+                        "<td id=\"period4-3-" + idx + "\">" + elem.NumberOfLikes + "</td>" +
+                        "</tr > ");
+                    var out1 = document.getElementById("period4-1-" + idx);
+                    new ShuffleText(out1).start();
+                    var out2 = document.getElementById("period4-2-" + idx);
+                    new ShuffleText(out2).start();
+                    var out3 = document.getElementById("period4-3-" + idx);
+                    new ShuffleText(out3).start();
+                });
+                 var table = $("#waiting4");
+                 if (data.ParticipantDirectory.ParticipantList4.length == 10) {
+                     $.each(data.WaitingListDirectory.WaitingList4, function (idx, elem) {
+
+                        table.append("<tr>" +
+                            "<td  id=\"period4-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
+                            "<td>" +
+                            "<div id=\"period4-2-" + idx + "\">" + elem.Request + "</div></td>" +
+                            "<td>" +
+                            "<div id=\"period4-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "</tr > ");
+                        var out1 = document.getElementById("period4-1-" + idx);
+                        new ShuffleText(out1).start();
+                        var out2 = document.getElementById("period4-2-" + idx);
+                        new ShuffleText(out2).start();
+                        var out3 = document.getElementById("period4-3-" + idx);
+                        new ShuffleText(out3).start();
+                    });
+                }
+
+                //-----------------------------------------------------------------------------------------
+                //PERIOD 5
+                var table = $("#period5");
+                $("#period5 tr").remove();
+                $("#waiting5 tr").remove();
+                $.each(data.ParticipantDirectory.ParticipantList5, function (idx, elem) {
+                    table.append("<tr>" +
+                        "<td  id=\"period5-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
+                        "<td>" +
+                        "<div id=\"period5-2-" + idx + "\">" + elem.Request + "</div></td>" +
+                        "<td id=\"period5-3-" + idx + "\">" + elem.NumberOfLikes + "</td>" +
+                        "</tr > ");
+                    var out1 = document.getElementById("period5-1-" + idx);
+                    new ShuffleText(out1).start();
+                    var out2 = document.getElementById("period5-2-" + idx);
+                    new ShuffleText(out2).start();
+                    var out3 = document.getElementById("period5-3-" + idx);
+                    new ShuffleText(out3).start();
+                });
+                 var table = $("#waiting5");
+                 if (data.ParticipantDirectory.ParticipantList5.length == 10) {
+                     $.each(data.WaitingListDirectory.WaitingList5, function (idx, elem) {
+
+                        table.append("<tr>" +
+                            "<td  id=\"period5-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
+                            "<td>" +
+                            "<div id=\"period5-2-" + idx + "\">" + elem.Request + "</div></td>" +
+                            "<td>" +
+                            "<div id=\"period5-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "</tr > ");
+                        var out1 = document.getElementById("period5-1-" + idx);
+                        new ShuffleText(out1).start();
+                        var out2 = document.getElementById("period5-2-" + idx);
+                        new ShuffleText(out2).start();
+                        var out3 = document.getElementById("period5-3-" + idx);
+                        new ShuffleText(out3).start();
+                    });
+                }
+
             }
         });
     };
@@ -141,34 +254,40 @@
 
 <div class="pageBody">
     <span id="clock"></span>
-    <div class="wrapper">
-        <div class="clash-card archer">
-            <div class="clash-card__image clash-card__image--archer" style="height: 150px;">
-                <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="archer" />
-            </div>
-            @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
+    <div id="beforeHour">
+        <div class="wrapper">
+            <div class="clash-card archer">
+                <div class="clash-card__image clash-card__image--archer" style="height: 150px;">
+                    <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="archer" />
+                </div>
+                <div class="clash-card__level clash-card__level--archer">18:00 - 19:00</div>
+                @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
                 <div class="clash-card__unit-name">The Archer</div>*@
-            <div class="clash-card__unit-description">
-                <table class="contain" id="period1">
-                    <div class="clash-card__unit-name">WAITING LIST</div>
-                </table>
-               
-                <table class="contain" id="waiting1">
-                    <div class="clash-card__unit-name">WAITING LIST</div>
-                </table>
-            </div>
-        </div> <!-- end clash-card archer-->
-    </div> <!-- end wrapper -->
+                <div class="clash-card__unit-description">
+                    <table class="contain" id="period1">
+                    </table>
+                    <div style="background-color:whitesmoke" id="waiting1" class="clash-card__unit-name wait">WAITING LIST</div>
+                    <table class="contain" id="waiting1">
+                    </table>
+                </div>
+            </div> <!-- end clash-card archer-->
+        </div> <!-- end wrapper -->
 
+    </div>
+    
     <div class="wrapper">
         <div class="clash-card wizard">
             <div class="clash-card__image clash-card__image--wizard" style="height: 150px;">
                 <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="wizard" />
             </div>
+            <div class="clash-card__level clash-card__level--archer">19:00 - 20:00</div>
             @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
-                <div class="clash-card__unit-name">The Archer</div>*@
+        <div class="clash-card__unit-name">The Archer</div>*@
             <div class="clash-card__unit-description">
                 <table class="contain" id="period2"></table>
+                <div style="background-color:whitesmoke" id="waiting2" class="clash-card__unit-name wait">WAITING LIST</div>
+                <table class="contain" id="waiting2">
+                </table>
             </div>
         </div> <!-- end clash-card archer-->
     </div> <!-- end wrapper -->
@@ -178,11 +297,15 @@
             <div class="clash-card__image clash-card__image--barbarian" style="height: 150px;">
                 <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="barbarian" />
             </div>
+            <div class="clash-card__level clash-card__level--archer">20:00 - 21:00</div>
             @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
-                <div class="clash-card__unit-name">The Archer</div>*@
+        <div class="clash-card__unit-name">The Archer</div>*@
             <div class="clash-card__unit-description">
                 <table class="contain" id="period3"></table>
             </div>
+            <div style="background-color:whitesmoke" id="waiting3" class="clash-card__unit-name wait">WAITING LIST</div>
+            <table class="contain" id="waiting3">
+            </table>
         </div> <!-- end clash-card archer-->
     </div> <!-- end wrapper -->
 
@@ -191,26 +314,37 @@
             <div class="clash-card__image clash-card__image--giant" style="height: 150px;">
                 <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="giant" />
             </div>
+            <div class="clash-card__level clash-card__level--archer">21:00 - 22:00</div>
             @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
-                <div class="clash-card__unit-name">The Archer</div>*@
+        <div class="clash-card__unit-name">The Archer</div>*@
             <div class="clash-card__unit-description">
                 <table class="contain" id="period4"></table>
+                <div style="background-color:whitesmoke" id="waiting4" class="clash-card__unit-name wait">WAITING LIST</div>
+                <table class="contain" id="waiting4">
+                </table>
             </div>
         </div> <!-- end clash-card archer-->
     </div> <!-- end wrapper -->
 
-    <div class="wrapper">
-        <div class="clash-card goblin">
-            <div class="clash-card__image clash-card__image--goblin" style="height: 150px;">
-                <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="goblin" />
-            </div>
-            @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
+    <div id="afterHour">
+        <div class="wrapper">
+            <div class="clash-card goblin">
+                <div class="clash-card__image clash-card__image--goblin" style="height: 150px;">
+                    <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="goblin" />
+                </div>
+                <div class="clash-card__level clash-card__level--archer">22:00 - 00:00</div>
+                @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
                 <div class="clash-card__unit-name">The Archer</div>*@
-            <div class="clash-card__unit-description">
-                <table class="contain" id="period5"></table>
-            </div>
-        </div> <!-- end clash-card archer-->
-    </div> <!-- end wrapper -->
+                <div class="clash-card__unit-description">
+                    <table class="contain" id="period5"></table>
+                    <div style="background-color:whitesmoke" id="waiting5" class="clash-card__unit-name wait">WAITING LIST</div>
+                    <table class="contain" id="waiting5">
+                    </table>
+                </div>
+            </div> <!-- end clash-card archer-->
+        </div> <!-- end wrapper -->
+    </div>
+   
 
 </div>
 

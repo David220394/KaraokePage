@@ -152,3 +152,5 @@ C:\Users\sylvio.brandon.david\Desktop\Karaoke\KaraokePage\WebApplication1\obj\De
 C:\Users\sylvio.brandon.david\Desktop\Karaoke\KaraokePage\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\sylvio.brandon.david\Desktop\Karaoke\KaraokePage\WebApplication1\bin\EPPlus.dll
 C:\Users\sylvio.brandon.david\Desktop\Karaoke\KaraokePage\WebApplication1\bin\EPPlus.xml
+C:\Users\User\source\repos\WebApplication1\WebApplication1\bin\EPPlus.dll
+C:\Users\User\source\repos\WebApplication1\WebApplication1\bin\EPPlus.xml

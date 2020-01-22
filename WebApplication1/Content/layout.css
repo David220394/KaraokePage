@@ -60,7 +60,7 @@ body {
   .clash-card__image--barbarian img {
     width: 400px;
     position: absolute;
-    top: -65px;
+    top: -90px;
     left: -70px; }
 
 .clash-card__image--archer {
@@ -68,7 +68,7 @@ body {
   .clash-card__image--archer img {
     width: 400px;
     position: absolute;
-    top: -45px;
+    top: -90px;
     left: -37px; }
 
 .clash-card__image--giant {
@@ -76,7 +76,7 @@ body {
   .clash-card__image--giant img {
     width: 340px;
     position: absolute;
-    top: -30px;
+    top: -90px;
     left: -25px; }
 
 .clash-card__image--goblin {
@@ -84,7 +84,7 @@ body {
   .clash-card__image--goblin img {
     width: 370px;
     position: absolute;
-    top: -21px;
+    top: -90px;
     left: -37px; }
 
 .clash-card__image--wizard {
@@ -92,14 +92,14 @@ body {
   .clash-card__image--wizard img {
     width: 345px;
     position: absolute;
-    top: -28px;
+    top: -90px;
     left: -10px; }
 
 .clash-card__level {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 3px; }
+  margin-bottom: 8px; }
 
 .clash-card__level--barbarian {
   color: #EC9B3B; }
@@ -117,10 +117,12 @@ body {
   color: #4FACFF; }
 
 .clash-card__unit-name {
-  font-size: 26px;
-  color: black;
-  font-weight: 900;
-  margin-bottom: 5px; }
+    font-size: 22px;
+    color: black;
+    font-weight: 900;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 .clash-card__unit-description {
   margin-bottom: 10px;
@@ -192,6 +194,10 @@ body {
 .slick-next {
   right: 100px;
   z-index: 999; }
+
+ .wait {
+    display: none;
+}
 
  th h1 {
     font-weight: bold;
