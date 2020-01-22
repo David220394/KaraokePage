@@ -5,7 +5,6 @@
 <script src="../../Scripts/jquery-3.3.1.min.js"></script>
 <script src="../../Scripts/shuffle-text.js"></script>
 <link rel="stylesheet" href="../../Content/layout.css" />
-<link rel="stylesheet" href="../../Content/tile.css" />
 <script type="text/javascript">
     var sample = {};
     sample.postData = function () {
@@ -15,9 +14,8 @@
             dataType: "json",
             data: {},
             success: function (data) {
-                var table = $("table");
-                $("table tr").remove();
-                table.append("<tr><td>Name</td><td>Song</td></tr>");
+                var table = $("#period1");
+                $("#period1 tr").remove();
                 $.each(data.Peroid1, function (idx, elem) {
                     //"<li><div class=\"inner\"><div class=\"li-img\"><img src=\"../../Images/karaoke-icon.png\"/></div>"+
                     //"    <div class=\"li-text\">"+
@@ -28,15 +26,37 @@
                     //"        </div>"+
                     //"    </div>"+
                     //"</li>"
-                    table.append("<tr class=\"list img-list\">" +
-                        "<td><img class=\"inner\" src=\"../../Images/karaoke-icon.png\" height=\"50\" width=\"50\"/></td>" +
-                        "<td class=\"li-text\">" +
-                        "<div class=\"li-head\" id=\"period1-1-" + idx + "\">" + (idx + 1) + " " + elem.name + "</div>" +
-                        "<div class=\"li-sub\" id=\"period1-2-" + idx + "\">" + elem.song + "</div></td>" +
+                    table.append("<tr>" +
+                        "<td  id=\"period1-1-" + idx + "\">" + (idx + 1) + " " + elem.name + "</td>" +
+                        "<td>" +
+                        "<div id=\"period1-2-" + idx + "\">" + elem.song + "</div></td>" +
                         "</tr > ");
                     var out1 = document.getElementById("period1-1-" + idx);
                     new ShuffleText(out1).start();
                     var out2 = document.getElementById("period1-2-" + idx);
+                    new ShuffleText(out2).start();
+                });
+
+                var table = $("#period2");
+                $("#period2 tr").remove();
+                $.each(data.Peroid2, function (idx, elem) {
+                    //"<li><div class=\"inner\"><div class=\"li-img\"><img src=\"../../Images/karaoke-icon.png\"/></div>"+
+                    //"    <div class=\"li-text\">"+
+                    //"            <h3 class=\"li-head\">Title of Content</h3>"+
+                    //"            <div class="li-sub">"+
+                    //"                <p>Summary of content.</p>"+
+                    //"            </div>"+
+                    //"        </div>"+
+                    //"    </div>"+
+                    //"</li>"
+                    table.append("<tr>" +
+                        "<td  id=\"period2-1-" + idx + "\">" + (idx + 1) + " " + elem.name + "</td>" +
+                        "<td>" +
+                        "<div id=\"period2-2-" + idx + "\">" + elem.song + "</div></td>" +
+                        "</tr > ");
+                    var out1 = document.getElementById("period2-1-" + idx);
+                    new ShuffleText(out1).start();
+                    var out2 = document.getElementById("period2-2-" + idx);
                     new ShuffleText(out2).start();
                 });
             }
@@ -48,14 +68,39 @@
             sample.postData();
         }, 5000);
     });
-    window.setInterval(function(){
-  sample.postData();
-}, 5000);
+//    window.setInterval(function(){
+//  sample.postData();
+//}, 50000);
 </script>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Song</th>
-    </tr>
-</table>
+<div class="pageBody">
+    <div class="wrapper">
+        <div class="clash-card archer">
+            <div class="clash-card__image clash-card__image--archer" style="height: 150px;">
+                <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="archer" />
+            </div>
+            @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
+                <div class="clash-card__unit-name">The Archer</div>*@
+            <div class="clash-card__unit-description">
+                <table class="contain" id="period1">
+                </table>
+            </div>
+        </div> <!-- end clash-card archer-->
+    </div> <!-- end wrapper -->
+
+    <div class="wrapper">
+        <div class="clash-card wizard">
+            <div class="clash-card__image clash-card__image--wizard" style="height: 150px;">
+                <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="wizard" />
+            </div>
+            @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
+                <div class="clash-card__unit-name">The Archer</div>*@
+            <div class="clash-card__unit-description">
+                <table class="contain" id="period2">
+                </table>
+            </div>
+        </div> <!-- end clash-card archer-->
+    </div> <!-- end wrapper -->
+
+</div>
+
