@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Services;
 
 namespace WebApplication1.Controllers
 {
@@ -38,86 +39,87 @@ namespace WebApplication1.Controllers
                 Peroid3 = new List<Model>(),
                 Peroid4 = new List<Model>()
             };
+            ListDirectory list= Service.Main();
 
             //List<Model> users = new List<UserModel>();
-            using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
-            {
-                string line;
+            //using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
+            //{
+            //    string line;
                 
-                while ((line = sr.ReadLine()) != null)
-                {
-                    string[] splits = line.Split(',');
-                    if (splits.Length > 1)
-                    {
-                        data.Peroid1.Add(new Model
-                        {
-                            name = splits[0],
-                            song = splits[1]
-                        }
-                        );
-                    }
-                }
-            }
+            //    while ((line = sr.ReadLine()) != null)
+            //    {
+            //        string[] splits = line.Split(',');
+            //        if (splits.Length > 1)
+            //        {
+            //            data.Peroid1.Add(new Model
+            //            {
+            //                name = splits[0],
+            //                song = splits[1]
+            //            }
+            //            );
+            //        }
+            //    }
+            //}
 
-            using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test2.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
-            {
-                string line;
+            //using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test2.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
+            //{
+            //    string line;
 
-                while ((line = sr.ReadLine()) != null)
-                {
-                    string[] splits = line.Split(',');
-                    if (splits.Length > 1)
-                    {
-                        data.Peroid2.Add(new Model
-                        {
-                            name = splits[0],
-                            song = splits[1]
-                        }
-                        );
-                    }
-                }
-            }
+            //    while ((line = sr.ReadLine()) != null)
+            //    {
+            //        string[] splits = line.Split(',');
+            //        if (splits.Length > 1)
+            //        {
+            //            data.Peroid2.Add(new Model
+            //            {
+            //                name = splits[0],
+            //                song = splits[1]
+            //            }
+            //            );
+            //        }
+            //    }
+            //}
 
-            using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test3.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
-            {
-                string line;
+            //using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test3.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
+            //{
+            //    string line;
 
-                while ((line = sr.ReadLine()) != null)
-                {
-                    string[] splits = line.Split(',');
-                    if (splits.Length > 1)
-                    {
-                        data.Peroid3.Add(new Model
-                        {
-                            name = splits[0],
-                            song = splits[1]
-                        }
-                        );
-                    }
-                }
-            }
+            //    while ((line = sr.ReadLine()) != null)
+            //    {
+            //        string[] splits = line.Split(',');
+            //        if (splits.Length > 1)
+            //        {
+            //            data.Peroid3.Add(new Model
+            //            {
+            //                name = splits[0],
+            //                song = splits[1]
+            //            }
+            //            );
+            //        }
+            //    }
+            //}
 
-            using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test4.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
-            {
-                string line;
+            //using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test4.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
+            //{
+            //    string line;
 
-                while ((line = sr.ReadLine()) != null)
-                {
-                    string[] splits = line.Split(',');
-                    if (splits.Length > 1)
-                    {
-                        data.Peroid4.Add(new Model
-                        {
-                            name = splits[0],
-                            song = splits[1]
-                        }
-                        );
-                    }
-                }
-            }
+            //    while ((line = sr.ReadLine()) != null)
+            //    {
+            //        string[] splits = line.Split(',');
+            //        if (splits.Length > 1)
+            //        {
+            //            data.Peroid4.Add(new Model
+            //            {
+            //                name = splits[0],
+            //                song = splits[1]
+            //            }
+            //            );
+            //        }
+            //    }
+            //}
 
 
-            return Json(data);
+            return Json(list);
         }
     }
 
