@@ -3,12 +3,13 @@
   box-sizing: border-box; }
 
 body {
-  background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg") no-repeat center center fixed;
-  background-size: cover;
-  font: 14px/20px "Lato", Arial, sans-serif;
-  color: #9E9E9E;
- }
+    background: linear-gradient(to bottom, #8c7a7a 0%, #af877c 65%, #af877c 100%) fixed;
+    /*background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg") no-repeat center center fixed;*/
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7aM26ELTysiblMxJiv_90tn3vsGLrgHcl8WhgXKEF9bRNshgDrw&s") no-repeat center center fixed;
+    background-size: cover;
+    font: 14px/20px "Lato", Arial, sans-serif;
+    color: #9E9E9E;
+}
 
 #clock {
     position: absolute;
@@ -29,10 +30,11 @@ body {
   text-align: center; }
 
 .wrapper {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin: 50px;
-  display:inline-block
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 50px;
+    margin-bottom: 400px;
+    display: inline-block
 }
   .wrapper:focus {
     outline: 0; }

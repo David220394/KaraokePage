@@ -39,62 +39,62 @@ namespace WebApplication1.Controllers
                 Peroid3 = new List<Model>(),
                 Peroid4 = new List<Model>()
             };
-            ////ListDirectory list= Service.Main();
+            ListDirectory list= Service.Main();
 
             List<Participant> first_participant_timeslot = new List<Participant>();
-            for (int i = 0; i<10;i++)
+            for (int i = 0; i < 10; i++)
             {
                 first_participant_timeslot.Add(new Participant()
                 {
-                    MainParticipant="Qwerty Q",
-                    NumberOfLikes="10",
-                    Request="Qwerty"
-                });
-            }
-
-            List<Participant> second_participant_timeslot = new List<Participant>();
-            for (int i = 0; i < 10; i++)
-            {
-                second_participant_timeslot.Add(new Participant()
-                {
                     MainParticipant = "Qwerty Q",
                     NumberOfLikes = "10",
                     Request = "Qwerty"
                 });
             }
 
-            List<Participant> third_participant_timeslot = new List<Participant>();
-            for (int i = 0; i < 10; i++)
-            {
-                third_participant_timeslot.Add(new Participant()
-                {
-                    MainParticipant = "Qwerty Q",
-                    NumberOfLikes = "10",
-                    Request = "Qwerty"
-                });
-            }
+            //List<Participant> second_participant_timeslot = new List<Participant>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    second_participant_timeslot.Add(new Participant()
+            //    {
+            //        MainParticipant = "Qwerty Q",
+            //        NumberOfLikes = "10",
+            //        Request = "Qwerty"
+            //    });
+            //}
 
-            List<Participant> fourth_participant_timeslot = new List<Participant>();
-            for (int i = 0; i < 10; i++)
-            {
-                fourth_participant_timeslot.Add(new Participant()
-                {
-                    MainParticipant = "Qwerty Q",
-                    NumberOfLikes = "10",
-                    Request = "Qwerty"
-                });
-            }
+            //List<Participant> third_participant_timeslot = new List<Participant>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    third_participant_timeslot.Add(new Participant()
+            //    {
+            //        MainParticipant = "Qwerty Q",
+            //        NumberOfLikes = "10",
+            //        Request = "Qwerty"
+            //    });
+            //}
 
-            List<Participant> fifth_participant_timeslot = new List<Participant>();
-            for (int i = 0; i < 10; i++)
-            {
-                fifth_participant_timeslot.Add(new Participant()
-                {
-                    MainParticipant = "Qwerty Q",
-                    NumberOfLikes = "10",
-                    Request = "Qwerty"
-                });
-            }
+            //List<Participant> fourth_participant_timeslot = new List<Participant>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    fourth_participant_timeslot.Add(new Participant()
+            //    {
+            //        MainParticipant = "Qwerty Q",
+            //        NumberOfLikes = "10",
+            //        Request = "Qwerty"
+            //    });
+            //}
+
+            //List<Participant> fifth_participant_timeslot = new List<Participant>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    fifth_participant_timeslot.Add(new Participant()
+            //    {
+            //        MainParticipant = "Qwerty Q",
+            //        NumberOfLikes = "10",
+            //        Request = "Qwerty"
+            //    });
+            //}
 
 
             List<Participant> first_participant_timeslot_waiting_list = new List<Participant>();
@@ -107,73 +107,74 @@ namespace WebApplication1.Controllers
                     Request = "Qwerty"
                 });
             }
+            list.ParticipantDirectory.ParticipantList1 = first_participant_timeslot;
+            list.WaitingListDirectory.WaitingList1 = first_participant_timeslot_waiting_list;
+            //List<Participant> second_participant_timeslot_waiting_list = new List<Participant>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    second_participant_timeslot_waiting_list.Add(new Participant()
+            //    {
+            //        MainParticipant = "Qwerty Q",
+            //        NumberOfLikes = "10",
+            //        Request = "Qwerty"
+            //    });
+            //}
 
-            List<Participant> second_participant_timeslot_waiting_list = new List<Participant>();
-            for (int i = 0; i < 10; i++)
-            {
-                second_participant_timeslot_waiting_list.Add(new Participant()
-                {
-                    MainParticipant = "Qwerty Q",
-                    NumberOfLikes = "10",
-                    Request = "Qwerty"
-                });
-            }
+            //List<Participant> third_participant_timeslot_waiting_list = new List<Participant>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    third_participant_timeslot_waiting_list.Add(new Participant()
+            //    {
+            //        MainParticipant = "Qwerty Q",
+            //        NumberOfLikes = "10",
+            //        Request = "Qwerty"
+            //    });
+            //}
 
-            List<Participant> third_participant_timeslot_waiting_list = new List<Participant>();
-            for (int i = 0; i < 10; i++)
-            {
-                third_participant_timeslot_waiting_list.Add(new Participant()
-                {
-                    MainParticipant = "Qwerty Q",
-                    NumberOfLikes = "10",
-                    Request = "Qwerty"
-                });
-            }
+            //List<Participant> fourth_participant_timeslot_waiting_list = new List<Participant>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    fourth_participant_timeslot_waiting_list.Add(new Participant()
+            //    {
+            //        MainParticipant = "Qwerty Q",
+            //        NumberOfLikes = "10",
+            //        Request = "Qwerty"
+            //    });
+            //}
 
-            List<Participant> fourth_participant_timeslot_waiting_list = new List<Participant>();
-            for (int i = 0; i < 10; i++)
-            {
-                fourth_participant_timeslot_waiting_list.Add(new Participant()
-                {
-                    MainParticipant = "Qwerty Q",
-                    NumberOfLikes = "10",
-                    Request = "Qwerty"
-                });
-            }
+            //List<Participant> fifth_participant_timeslot_waiting_list = new List<Participant>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    fifth_participant_timeslot_waiting_list.Add(new Participant()
+            //    {
+            //        MainParticipant = "Qwerty Q",
+            //        NumberOfLikes = "10",
+            //        Request = "Qwerty"
+            //    });
+            //}
 
-            List<Participant> fifth_participant_timeslot_waiting_list = new List<Participant>();
-            for (int i = 0; i < 10; i++)
-            {
-                fifth_participant_timeslot_waiting_list.Add(new Participant()
-                {
-                    MainParticipant = "Qwerty Q",
-                    NumberOfLikes = "10",
-                    Request = "Qwerty"
-                });
-            }
+            //ParticipantDirectory participantDirectory = new ParticipantDirectory()
+            //{
+            //    ParticipantList1 = first_participant_timeslot,
+            //    ParticipantList2 = second_participant_timeslot,
+            //    ParticipantList3 = third_participant_timeslot,
+            //    ParticipantList4 = fourth_participant_timeslot,
+            //    ParticipantList5 = fifth_participant_timeslot
+            //};
+            //WaitingListDirectory waitingListDirectory = new WaitingListDirectory()
+            //{
+            //    WaitingList1 = first_participant_timeslot_waiting_list,
+            //    WaitingList2 = second_participant_timeslot_waiting_list,
+            //    WaitingList3 = third_participant_timeslot_waiting_list,
+            //    WaitingList4 = fourth_participant_timeslot_waiting_list,
+            //    WaitingList5 = fifth_participant_timeslot_waiting_list
+            //};
 
-            ParticipantDirectory participantDirectory = new ParticipantDirectory()
-            {
-                ParticipantList1 = first_participant_timeslot,
-                ParticipantList2 = second_participant_timeslot,
-                ParticipantList3 = third_participant_timeslot,
-                ParticipantList4 = fourth_participant_timeslot,
-                ParticipantList5 = fifth_participant_timeslot
-            };
-            WaitingListDirectory waitingListDirectory = new WaitingListDirectory()
-            {
-                WaitingList1 = first_participant_timeslot_waiting_list,
-                WaitingList2 = second_participant_timeslot_waiting_list,
-                WaitingList3 = third_participant_timeslot_waiting_list,
-                WaitingList4 = fourth_participant_timeslot_waiting_list,
-                WaitingList5 = fifth_participant_timeslot_waiting_list
-            };
-
-            ListDirectory list = new ListDirectory()
-            {
-                ParticipantDirectory = participantDirectory,
-                WaitingListDirectory = waitingListDirectory
-            };
+            //ListDirectory list = new ListDirectory()
+            //{
+            //    ParticipantDirectory = participantDirectory,
+            //    WaitingListDirectory = waitingListDirectory
+            //};
             //List<Model> users = new List<UserModel>();
             //using (var sr = new StreamReader(new FileStream(@"C:\Users\User\source\repos\WebApplication1\WebApplication1\Test.txt", FileMode.Open, FileAccess.Read, FileShare.Read)))
             //{

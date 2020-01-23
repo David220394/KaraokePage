@@ -44,14 +44,15 @@
                 var table = $("#period1");
                 $("#period1 tr").remove();
                 $("#waiting1 tr").remove();
+                $("#waiting1 caption").remove();
                 $.each(data.ParticipantDirectory.ParticipantList1, function (idx, elem) {
 
                     table.append("<tr>" +
                         "<td  id=\"period1-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                         "<td>" +
                         "<div id=\"period1-2-" + idx + "\">" + elem.Request + "</div></td>" +
-                        "<td>" +
-                        "<div id=\"period1-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                        "<td width=\"40px\">" +
+                        "<div id=\"period1-3-" + idx + "\" >" + elem.NumberOfLikes + "</div></td>" +
                         "</tr > ");
                     var out1 = document.getElementById("period1-1-" + idx);
                     new ShuffleText(out1).start();
@@ -62,14 +63,16 @@
                 });
                 var table = $("#waiting1");
                 if (data.ParticipantDirectory.ParticipantList1.length == 10) {
+                    $("#waiting1").css("display", "table");
+                    table.append("<caption  style=\"background-color: whitesmoke; font-size: 22px; color: black; text-align: center;\">WAITING LIST</caption>");
                      $.each(data.WaitingListDirectory.WaitingList1, function (idx, elem) {
-                         $("#waiting1").css("display","block");
+                         
                         table.append("<tr>" +
                             "<td  id=\"period1-1-1" + idx + "\">" + elem.MainParticipant + "</td>" +
                             "<td>" +
                             "<div id=\"period1-2-1" + idx + "\">" + elem.Request + "</div></td>" +
-                            "<td>" +
-                            "<div id=\"period1-3-1" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "<td width=\"40px\">" +
+                            "<div id=\"period1-3-1" + idx + "\" >" + elem.NumberOfLikes + "</div></td>" +
                             "</tr > ");
                         var out1 = document.getElementById("period1-1-1" + idx);
                         new ShuffleText(out1).start();
@@ -85,13 +88,14 @@
                 var table = $("#period2");
                 $("#period2 tr").remove();
                 $("#waiting2 tr").remove();
+                $("#waiting2 caption").remove();
                 $.each(data.ParticipantDirectory.ParticipantList2, function (idx, elem) {
                     table.append("<tr>" +
                         "<td  id=\"period2-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                         "<td>" +
                         "<div id=\"period2-2-" + idx + "\">" + elem.Request + "</div></td>" +
-                        "<td>" +
-                        "<div id=\"period2-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                        "<td width=\"40px\">" +
+                        "<div id=\"period2-3-" + idx + "\" >" + elem.NumberOfLikes + "</div></td>" +
                         "</tr > ");
                     var out1 = document.getElementById("period2-1-" + idx);
                     new ShuffleText(out1).start();
@@ -102,14 +106,15 @@
                 });
                  var table = $("#waiting2");
                 if (data.ParticipantDirectory.ParticipantList2.length == 10) {
+                    $("#waiting2").css("display", "table");
                      $.each(data.WaitingListDirectory.WaitingList2, function (idx, elem) {
-
+                         table.append("<caption  style=\"background-color: whitesmoke; font-size: 22px; color: black; text-align: center;\">WAITING LIST</caption>");
                         table.append("<tr>" +
                             "<td  id=\"period1-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                             "<td>" +
                             "<div id=\"period1-2-" + idx + "\">" + elem.Request + "</div></td>" +
-                            "<td>" +
-                            "<div id=\"period1-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "<td width=\"40px\">" +
+                            "<div id=\"period1-3-" + idx + "\" >" + elem.NumberOfLikes + "</div></td>" +
                             "</tr > ");
                         var out1 = document.getElementById("period1-1-" + idx);
                         new ShuffleText(out1).start();
@@ -125,12 +130,13 @@
                 var table = $("#period3");
                 $("#period3 tr").remove();
                 $("#waiting3 tr").remove();
+                $("#waiting3 caption").remove();
                 $.each(data.ParticipantDirectory.ParticipantList3, function (idx, elem) {
                     table.append("<tr>" +
                         "<td  id=\"period3-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                         "<td>" +
                         "<div id=\"period3-2-" + idx + "\">" + elem.Request + "</div></td>" +
-                        "<td id=\"period3-3-" + idx + "\">" + elem.NumberOfLikes + "</td>" +
+                        "<td id=\"period3-3-" + idx + "\" width=\"40px\">" + elem.NumberOfLikes + "</td>" +
                         "</tr > ");
                     var out1 = document.getElementById("period3-1-" + idx);
                     new ShuffleText(out1).start();
@@ -140,7 +146,9 @@
                     new ShuffleText(out3).start();
                 });
                  var table = $("#waiting3");
-                 if (data.ParticipantDirectory.ParticipantList3.length == 10) {
+                if (data.ParticipantDirectory.ParticipantList3.length == 10) {
+                    $("#waiting3").css("display", "table");
+                    table.append("<caption  style=\"background-color: whitesmoke; font-size: 22px; color: black; text-align: center;\">WAITING LIST</caption>");
                      $.each(data.WaitingListDirectory.WaitingList3, function (idx, elem) {
 
                         table.append("<tr>" +
@@ -148,7 +156,7 @@
                             "<td>" +
                             "<div id=\"period1-2-" + idx + "\">" + elem.Request + "</div></td>" +
                             "<td>" +
-                            "<div id=\"period1-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "<div id=\"period1-3-" + idx + "\" width=\"40px\">" + elem.NumberOfLikes + "</div></td>" +
                             "</tr > ");
                         var out1 = document.getElementById("period1-1-" + idx);
                         new ShuffleText(out1).start();
@@ -164,12 +172,13 @@
                 var table = $("#period4");
                 $("#period4 tr").remove();
                 $("#waiting4 tr").remove();
+                $("#waiting4 caption").remove();
                 $.each(data.ParticipantDirectory.ParticipantList4, function (idx, elem) {
                     table.append("<tr>" +
                         "<td  id=\"period4-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                         "<td>" +
                         "<div id=\"period4-2-" + idx + "\">" + elem.Request + "</div></td>" +
-                        "<td id=\"period4-3-" + idx + "\">" + elem.NumberOfLikes + "</td>" +
+                        "<td id=\"period4-3-" + idx + "\" width=\"40px\">" + elem.NumberOfLikes + "</td>" +
                         "</tr > ");
                     var out1 = document.getElementById("period4-1-" + idx);
                     new ShuffleText(out1).start();
@@ -179,7 +188,9 @@
                     new ShuffleText(out3).start();
                 });
                  var table = $("#waiting4");
-                 if (data.ParticipantDirectory.ParticipantList4.length == 10) {
+                if (data.ParticipantDirectory.ParticipantList4.length == 10) {
+                    $("#waiting4").css("display", "table");
+                    table.append("<caption  style=\"background-color: whitesmoke; font-size: 22px; color: black; text-align: center;\">WAITING LIST</caption>");
                      $.each(data.WaitingListDirectory.WaitingList4, function (idx, elem) {
 
                         table.append("<tr>" +
@@ -187,7 +198,7 @@
                             "<td>" +
                             "<div id=\"period4-2-" + idx + "\">" + elem.Request + "</div></td>" +
                             "<td>" +
-                            "<div id=\"period4-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "<div id=\"period4-3-" + idx + "\" width=\"40px\">" + elem.NumberOfLikes + "</div></td>" +
                             "</tr > ");
                         var out1 = document.getElementById("period4-1-" + idx);
                         new ShuffleText(out1).start();
@@ -203,12 +214,13 @@
                 var table = $("#period5");
                 $("#period5 tr").remove();
                 $("#waiting5 tr").remove();
+                $("#waiting5 caption").remove();
                 $.each(data.ParticipantDirectory.ParticipantList5, function (idx, elem) {
                     table.append("<tr>" +
                         "<td  id=\"period5-1-" + idx + "\">" + elem.MainParticipant + "</td>" +
                         "<td>" +
                         "<div id=\"period5-2-" + idx + "\">" + elem.Request + "</div></td>" +
-                        "<td id=\"period5-3-" + idx + "\">" + elem.NumberOfLikes + "</td>" +
+                        "<td id=\"period5-3-" + idx + "\" width=\"40px\">" + elem.NumberOfLikes + "</td>" +
                         "</tr > ");
                     var out1 = document.getElementById("period5-1-" + idx);
                     new ShuffleText(out1).start();
@@ -218,7 +230,9 @@
                     new ShuffleText(out3).start();
                 });
                  var table = $("#waiting5");
-                 if (data.ParticipantDirectory.ParticipantList5.length == 10) {
+                if (data.ParticipantDirectory.ParticipantList5.length == 10) {
+                    $("#waiting5").css("display", "table");
+                    table.append("<caption  style=\"background-color: whitesmoke; font-size: 22px; color: black; text-align: center;\">WAITING LIST</caption>");
                      $.each(data.WaitingListDirectory.WaitingList5, function (idx, elem) {
 
                         table.append("<tr>" +
@@ -226,7 +240,7 @@
                             "<td>" +
                             "<div id=\"period5-2-" + idx + "\">" + elem.Request + "</div></td>" +
                             "<td>" +
-                            "<div id=\"period5-3-" + idx + "\">" + elem.NumberOfLikes + "</div></td>" +
+                            "<div id=\"period5-3-" + idx + "\" width=\"40px\">" + elem.NumberOfLikes + "</div></td>" +
                             "</tr > ");
                         var out1 = document.getElementById("period5-1-" + idx);
                         new ShuffleText(out1).start();
@@ -254,8 +268,7 @@
 
 <div class="pageBody">
     <span id="clock"></span>
-    <div id="beforeHour">
-        <div class="wrapper">
+        <div class="wrapper" id="beforeHour">
             <div class="clash-card archer">
                 <div class="clash-card__image clash-card__image--archer" style="height: 150px;">
                     <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="archer" />
@@ -264,16 +277,15 @@
                 @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
                 <div class="clash-card__unit-name">The Archer</div>*@
                 <div class="clash-card__unit-description">
-                    <table class="contain" id="period1">
-                    </table>
-                    <div style="background-color:whitesmoke" id="waiting1" class="clash-card__unit-name wait">WAITING LIST</div>
+                    <table class="contain" id="period1"></table>
+                    @*<span style="background-color:whitesmoke;font-size: 22px;color: black;font-weight: 900;margin-top: 5px;margin-bottom: 5px;" id="waiting1" class="clash-card__unit-name wait">WAITING LIST</span>*@
                     <table class="contain" id="waiting1">
+                        
                     </table>
                 </div>
             </div> <!-- end clash-card archer-->
         </div> <!-- end wrapper -->
 
-    </div>
     
     <div class="wrapper">
         <div class="clash-card wizard">
@@ -326,8 +338,7 @@
         </div> <!-- end clash-card archer-->
     </div> <!-- end wrapper -->
 
-    <div id="afterHour">
-        <div class="wrapper">
+        <div class="wrapper" id="afterHour">
             <div class="clash-card goblin">
                 <div class="clash-card__image clash-card__image--goblin" style="height: 150px;">
                     <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="goblin" />
@@ -343,7 +354,6 @@
                 </div>
             </div> <!-- end clash-card archer-->
         </div> <!-- end wrapper -->
-    </div>
    
 
 </div>

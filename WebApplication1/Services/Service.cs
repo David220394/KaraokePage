@@ -73,7 +73,8 @@ namespace WebApplication1.Services
                                         participant.Played = worksheet.Cells[i, j].Value.ToString();
                                         break;
                                     case "6":
-                                        participant.NumberOfLikes = worksheet.Cells[i, j].Value.ToString();
+                                        participant.NumberOfLikes = (worksheet.Cells[i, j].Value.ToString() != null && !worksheet.Cells[i, j].Value.ToString().Equals("null")) ? worksheet.Cells[i, j].Value.ToString(): "-";
+                                        
                                         break;
                                     case "7":
                                         var requested_timeslots = worksheet.Cells[i, j].Value.ToString().Replace("#", "").Split(';');
@@ -192,19 +193,19 @@ namespace WebApplication1.Services
 
             ParticipantDirectory participantDirectory = new ParticipantDirectory()
             {
-                ParticipantList1 = first_participant_timeslot,
-                ParticipantList2 = second_participant_timeslot,
-                ParticipantList3 = third_participant_timeslot,
-                ParticipantList4 = fourth_participant_timeslot,
-                ParticipantList5 = fifth_participant_timeslot
+                ParticipantList1 = first_participant_timeslot.OrderByDescending(x=> x.NumberOfLikes).ToList(),
+                ParticipantList2 = second_participant_timeslot.OrderByDescending(x => x.NumberOfLikes).ToList(),
+                ParticipantList3 = third_participant_timeslot.OrderByDescending(x => x.NumberOfLikes).ToList(),
+                ParticipantList4 = fourth_participant_timeslot.OrderByDescending(x => x.NumberOfLikes).ToList(),
+                ParticipantList5 = fifth_participant_timeslot.OrderByDescending(x => x.NumberOfLikes).ToList()
             };
             WaitingListDirectory waitingListDirectory = new WaitingListDirectory()
             {
-                WaitingList1 = first_participant_timeslot_waiting_list,
-                WaitingList2 = second_participant_timeslot_waiting_list,
-                WaitingList3 = third_participant_timeslot_waiting_list,
-                WaitingList4 = fourth_participant_timeslot_waiting_list,
-                WaitingList5 = fifth_participant_timeslot_waiting_list
+                WaitingList1 = first_participant_timeslot_waiting_list.OrderByDescending(x => x.NumberOfLikes).ToList(),
+                WaitingList2 = second_participant_timeslot_waiting_list.OrderByDescending(x => x.NumberOfLikes).ToList(),
+                WaitingList3 = third_participant_timeslot_waiting_list.OrderByDescending(x => x.NumberOfLikes).ToList(),
+                WaitingList4 = fourth_participant_timeslot_waiting_list.OrderByDescending(x => x.NumberOfLikes).ToList(),
+                WaitingList5 = fifth_participant_timeslot_waiting_list.OrderByDescending(x => x.NumberOfLikes).ToList()
             };
 
             ListDirectory listDirectory = new ListDirectory()
