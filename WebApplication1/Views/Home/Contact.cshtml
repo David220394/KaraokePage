@@ -45,6 +45,7 @@
                 $("#period1 tr").remove();
                 $("#waiting1 tr").remove();
                 $("#waiting1 caption").remove();
+                table.append("<tr><th>Name</th><th>Song</th><th>Like</th></tr>");
                 $.each(data.ParticipantDirectory.ParticipantList1, function (idx, elem) {
 
                     table.append("<tr>" +
@@ -261,32 +262,30 @@
             sample.postData();
         }, 5000);
     });
-//    window.setInterval(function(){
-//  sample.postData();
-//}, 50000);
+    window.setInterval(function(){
+  sample.postData();
+}, 60000);
 </script>
 
 <div class="pageBody">
     <span id="clock"></span>
-        <div class="wrapper" id="beforeHour">
-            <div class="clash-card archer">
-                <div class="clash-card__image clash-card__image--archer" style="height: 150px;">
-                    <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="archer" />
-                </div>
-                <div class="clash-card__level clash-card__level--archer">18:00 - 19:00</div>
-                @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
+    <div class="wrapper" id="beforeHour">
+        <div class="clash-card archer">
+            <div class="clash-card__image clash-card__image--archer" style="height: 150px;">
+                <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="archer" />
+            </div>
+            <div class="clash-card__level clash-card__level--archer">18:00 - 19:00</div>
+            @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
                 <div class="clash-card__unit-name">The Archer</div>*@
-                <div class="clash-card__unit-description">
-                    <table class="contain" id="period1"></table>
-                    @*<span style="background-color:whitesmoke;font-size: 22px;color: black;font-weight: 900;margin-top: 5px;margin-bottom: 5px;" id="waiting1" class="clash-card__unit-name wait">WAITING LIST</span>*@
-                    <table class="contain" id="waiting1">
-                        
-                    </table>
-                </div>
-            </div> <!-- end clash-card archer-->
-        </div> <!-- end wrapper -->
+            <div class="clash-card__unit-description">
+                <table class="contain" id="period1"></table>
+                @*<span style="background-color:whitesmoke;font-size: 22px;color: black;font-weight: 900;margin-top: 5px;margin-bottom: 5px;" id="waiting1" class="clash-card__unit-name wait">WAITING LIST</span>*@
+                <table class="contain" id="waiting1"></table>
+            </div>
+        </div> <!-- end clash-card archer-->
+    </div> <!-- end wrapper -->
 
-    
+
     <div class="wrapper">
         <div class="clash-card wizard">
             <div class="clash-card__image clash-card__image--wizard" style="height: 150px;">
@@ -294,12 +293,11 @@
             </div>
             <div class="clash-card__level clash-card__level--archer">19:00 - 20:00</div>
             @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
-        <div class="clash-card__unit-name">The Archer</div>*@
+                <div class="clash-card__unit-name">The Archer</div>*@
             <div class="clash-card__unit-description">
                 <table class="contain" id="period2"></table>
                 <div style="background-color:whitesmoke" id="waiting2" class="clash-card__unit-name wait">WAITING LIST</div>
-                <table class="contain" id="waiting2">
-                </table>
+                <table class="contain" id="waiting2"></table>
             </div>
         </div> <!-- end clash-card archer-->
     </div> <!-- end wrapper -->
@@ -311,50 +309,47 @@
             </div>
             <div class="clash-card__level clash-card__level--archer">20:00 - 21:00</div>
             @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
-        <div class="clash-card__unit-name">The Archer</div>*@
+                <div class="clash-card__unit-name">The Archer</div>*@
             <div class="clash-card__unit-description">
                 <table class="contain" id="period3"></table>
             </div>
             <div style="background-color:whitesmoke" id="waiting3" class="clash-card__unit-name wait">WAITING LIST</div>
-            <table class="contain" id="waiting3">
-            </table>
+            <table class="contain" id="waiting3"></table>
         </div> <!-- end clash-card archer-->
     </div> <!-- end wrapper -->
-
-    <div class="wrapper">
-        <div class="clash-card giant">
-            <div class="clash-card__image clash-card__image--giant" style="height: 150px;">
-                <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="giant" />
-            </div>
-            <div class="clash-card__level clash-card__level--archer">21:00 - 22:00</div>
-            @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
-        <div class="clash-card__unit-name">The Archer</div>*@
-            <div class="clash-card__unit-description">
-                <table class="contain" id="period4"></table>
-                <div style="background-color:whitesmoke" id="waiting4" class="clash-card__unit-name wait">WAITING LIST</div>
-                <table class="contain" id="waiting4">
-                </table>
-            </div>
-        </div> <!-- end clash-card archer-->
-    </div> <!-- end wrapper -->
-
-        <div class="wrapper" id="afterHour">
-            <div class="clash-card goblin">
-                <div class="clash-card__image clash-card__image--goblin" style="height: 150px;">
-                    <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="goblin" />
+    @*<div class="wrapper">
+            <div class="clash-card giant">
+                <div class="clash-card__image clash-card__image--giant" style="height: 150px;">
+                    <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="giant" />
                 </div>
-                <div class="clash-card__level clash-card__level--archer">22:00 - 00:00</div>
-                @*<div class="clash-card__level clash-card__level--archer">Level 5</div>
-                <div class="clash-card__unit-name">The Archer</div>*@
+                <div class="clash-card__level clash-card__level--archer">21:00 - 22:00</div>
+                 <!--<div class="clash-card__level clash-card__level--archer">Level 5</div>
+            <div class="clash-card__unit-name">The Archer</div>-->
                 <div class="clash-card__unit-description">
-                    <table class="contain" id="period5"></table>
-                    <div style="background-color:whitesmoke" id="waiting5" class="clash-card__unit-name wait">WAITING LIST</div>
-                    <table class="contain" id="waiting5">
+                    <table class="contain" id="period4"></table>
+                    <div style="background-color:whitesmoke" id="waiting4" class="clash-card__unit-name wait">WAITING LIST</div>
+                    <table class="contain" id="waiting4">
                     </table>
                 </div>
             </div> <!-- end clash-card archer-->
         </div> <!-- end wrapper -->
-   
+
+            <div class="wrapper" id="afterHour">
+                <div class="clash-card goblin">
+                    <div class="clash-card__image clash-card__image--goblin" style="height: 150px;">
+                        <img src="../../Images/hiclipart.com.png" width="42" height="225" alt="goblin" />
+                    </div>
+                    <div class="clash-card__level clash-card__level--archer">22:00 - 00:00</div>
+                    <!--<div class="clash-card__level clash-card__level--archer">Level 5</div>
+                        <div class="clash-card__unit-name">The Archer</div>-->
+                    <div class="clash-card__unit-description">
+                        <table class="contain" id="period5"></table>
+                        <div style="background-color:whitesmoke" id="waiting5" class="clash-card__unit-name wait">WAITING LIST</div>
+                        <table class="contain" id="waiting5"></table>
+                    </div>
+                </div> <!-- end clash-card archer-->
+                </div> <!-- end wrapper -->*@
+
 
 </div>
 

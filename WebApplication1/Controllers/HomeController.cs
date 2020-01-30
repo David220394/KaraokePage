@@ -39,7 +39,7 @@ namespace WebApplication1.Controllers
                 Peroid3 = new List<Model>(),
                 Peroid4 = new List<Model>()
             };
-            ListDirectory list= Service.Main();
+            ListDirectory list = Service.Main();
 
             List<Participant> first_participant_timeslot = new List<Participant>();
             for (int i = 0; i < 10; i++)
@@ -107,8 +107,8 @@ namespace WebApplication1.Controllers
                     Request = "Qwerty"
                 });
             }
-            list.ParticipantDirectory.ParticipantList1 = first_participant_timeslot;
-            list.WaitingListDirectory.WaitingList1 = first_participant_timeslot_waiting_list;
+            //list.ParticipantDirectory.ParticipantList1 = first_participant_timeslot;
+            //list.WaitingListDirectory.WaitingList1 = first_participant_timeslot_waiting_list;
             //List<Participant> second_participant_timeslot_waiting_list = new List<Participant>();
             //for (int i = 0; i < 10; i++)
             //{
@@ -252,6 +252,27 @@ namespace WebApplication1.Controllers
             //    }
             //}
 
+            DateTime time = DateTime.Now;
+            DateTime timeFrame1 = new DateTime(2020, 01, 24, 20, 00, 00);
+            DateTime timeFrame2 = new DateTime(2020, 01, 24, 20, 00, 00);
+            if (time > timeFrame2)
+            {
+                list.ParticipantDirectory.ParticipantList1 = list.ParticipantDirectory.ParticipantList3;
+                list.ParticipantDirectory.ParticipantList2 = list.ParticipantDirectory.ParticipantList4;
+                list.ParticipantDirectory.ParticipantList3 = list.ParticipantDirectory.ParticipantList5;
+                list.WaitingListDirectory.WaitingList1 = list.WaitingListDirectory.WaitingList3;
+                list.WaitingListDirectory.WaitingList2 = list.WaitingListDirectory.WaitingList4;
+                list.WaitingListDirectory.WaitingList3 = list.WaitingListDirectory.WaitingList5;
+            }
+            else if (time > timeFrame1)
+            {
+                list.ParticipantDirectory.ParticipantList1 = list.ParticipantDirectory.ParticipantList2;
+                list.ParticipantDirectory.ParticipantList2 = list.ParticipantDirectory.ParticipantList3;
+                list.ParticipantDirectory.ParticipantList3 = list.ParticipantDirectory.ParticipantList4;
+                list.WaitingListDirectory.WaitingList1 = list.WaitingListDirectory.WaitingList2;
+                list.WaitingListDirectory.WaitingList2 = list.WaitingListDirectory.WaitingList3;
+                list.WaitingListDirectory.WaitingList3 = list.WaitingListDirectory.WaitingList4;
+            }
 
             return Json(list);
         }

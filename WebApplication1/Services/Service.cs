@@ -67,13 +67,18 @@ namespace WebApplication1.Services
                                         participant.Request = worksheet.Cells[i, j].Value.ToString();
                                         break;
                                     case "4":
-                                        participant.DateCreated = worksheet.Cells[i, j].Value.ToString();
+                                        participant.NumberOfLikes = worksheet.Cells[i, j].Value.ToString();
+                                        if (string.IsNullOrEmpty(participant.NumberOfLikes.Trim()) || participant.NumberOfLikes.Trim().Contains("null"))
+                                        {
+                                            participant.NumberOfLikes = "0";
+                                        }
+                                        
                                         break;
                                     case "5":
-                                        participant.Played = worksheet.Cells[i, j].Value.ToString();
+                                        participant.DateCreated = worksheet.Cells[i, j].Value.ToString();
                                         break;
                                     case "6":
-                                        participant.NumberOfLikes = (worksheet.Cells[i, j].Value.ToString() != null && !worksheet.Cells[i, j].Value.ToString().Equals("null")) ? worksheet.Cells[i, j].Value.ToString(): "-";
+                                        participant.Played = (worksheet.Cells[i, j].Value.ToString() != null && !worksheet.Cells[i, j].Value.ToString().Equals("null")) ? worksheet.Cells[i, j].Value.ToString(): "-";
                                         
                                         break;
                                     case "7":
@@ -190,6 +195,17 @@ namespace WebApplication1.Services
                 }
 
             }
+            first_participant_timeslot.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+            second_participant_timeslot.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+            third_participant_timeslot.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+            fourth_participant_timeslot.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+            fifth_participant_timeslot.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+
+            first_participant_timeslot_waiting_list.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+            second_participant_timeslot_waiting_list.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+            third_participant_timeslot_waiting_list.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+            fourth_participant_timeslot_waiting_list.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
+            fifth_participant_timeslot_waiting_list.Where(w => w.NumberOfLikes == null || w.NumberOfLikes == "null").ToList().ForEach(s => s.NumberOfLikes = "0");
 
             ParticipantDirectory participantDirectory = new ParticipantDirectory()
             {
